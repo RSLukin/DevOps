@@ -9,6 +9,7 @@ variable "location" {
 }
 
 variable "tags" {
+  type        = "map"
   default     = "Tag for Task1"
   description = "Any tags which should be assigned to the resources in this example"
 }

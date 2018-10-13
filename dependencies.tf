@@ -1,11 +1,3 @@
-# Configure the Microsoft Azure Provider
-provider "azurerm" {
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-}
-
 # Create a resource group if it doesn’t exist
 resource "azurerm_resource_group" "main" {
   name     = "${var.prefix}-resources"
@@ -82,4 +74,13 @@ resource "azurerm_network_security_group" "myterraformnsg" {
         source_address_prefix      = "*"
         destination_address_prefix = "*"
     }
+}
+
+# Create public IPs
+resource "azurerm_public_ip" "myterraformpublicip" {
+    name                         = "task1PublicIP2"
+    location                     = "${var.location}"
+    resource_group_name          = "${azurerm_resource_group.main.name}"
+    public_ip_address_allocation = "dynamic"
+
 }

@@ -30,6 +30,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "testconfiguration1"
     subnet_id                     = "${azurerm_subnet.internal.id}"
     private_ip_address_allocation = "dynamic"
+    public_ip_address_id          = "${azurerm_public_ip.myterraformpublicip.id}"
       }
 }
 

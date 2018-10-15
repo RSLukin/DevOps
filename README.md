@@ -1,5 +1,10 @@
 # DevOps
 
+This terraform code does the following:
+1)Connects to Azure subscription using the credentials from azureprovider.tf
+2)Creates all required resources for VM such as: resource group and networking
+3)Creates VM
+
 Variables:
 
 1)prefix

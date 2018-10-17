@@ -17,19 +17,10 @@ variable "tags" {
 
 # VM variables
 
-variable "computer_name" {
-  default     = "vm_final"
-  description = "VM name"
-}
 
-variable "admin_username" {
+variable "admin_user" {
   default     = "rlukin"
   description = "Admin user name"
-}
-
-variable "os_disk_name" {
-  default     = "taks1_disk"
-  description = "OS disk name"
 }
 
 

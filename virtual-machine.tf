@@ -21,14 +21,14 @@ resource "azurerm_virtual_machine" "test" {
    }
 
   storage_os_disk {
-    name              = "${var.os_disk_name}"
+    name              = "${var.prefix}-osdisk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
 
   os_profile {
-    computer_name  = "${var.computer_name}"
+    computer_name  = "${var.prefix}-cn"
     admin_username = "${var.admin_username}"
     custom_data = "${var.custom_data}"
   }

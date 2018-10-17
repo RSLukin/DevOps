@@ -29,6 +29,11 @@ variable "admin_user" {
   description = "Admin user name"
 }
 
+variable "hostname" {
+  default     = "final-vm"
+  description = "Linux host name"
+}
+
 
 variable "sshkey" {
   default     = ""

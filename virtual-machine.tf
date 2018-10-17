@@ -29,7 +29,7 @@ resource "azurerm_virtual_machine" "test" {
 
   os_profile {
     computer_name  = "${var.prefix}-cn"
-    admin_username = "${var.admin_username}"
+    admin_username = "${var.admin_user}"
     custom_data = "${var.custom_data}"
   }
 

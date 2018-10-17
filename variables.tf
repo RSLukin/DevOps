@@ -1,5 +1,6 @@
+# General variables
 variable "prefix" {
-  default     = "task1"
+  default     = "task1_final"
   description = "The Prefix used for all resources in this task"
 }
 
@@ -7,6 +8,30 @@ variable "location" {
   default     = "West Europe"
   description = "The Azure Region in which the resources in this task should exist"
 }
+
+variable "tags" {
+  type        = "map"
+  default     = {}
+  description = "Any tags which should be assigned to the resources in this task"
+}
+
+# VM variables
+
+variable "computer_name" {
+  default     = "vm_final"
+  description = "VM name"
+}
+
+variable "admin_username" {
+  default     = "rlukin"
+  description = "Admin user name"
+}
+
+variable "os_disk_name" {
+  default     = "taks1_disk"
+  description = "OS disk name"
+}
+
 
 variable "sshkey" {
   default     = ""
@@ -19,8 +44,4 @@ variable "custom_data" {
 }
 
 
-variable "tags" {
-  type        = "map"
-  default     = {}
-  description = "Any tags which should be assigned to the resources in this task"
-}
+

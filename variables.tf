@@ -15,6 +15,12 @@ variable "tags" {
   description = "Any tags which should be assigned to the resources in this task"
 }
 
+variable "port_ranges" {
+  type        = "list"
+  default = ["22", "8080", "1337"]
+  description = "Tcp ports to be allowed by the firewall"
+}
+
 # VM variables
 
 

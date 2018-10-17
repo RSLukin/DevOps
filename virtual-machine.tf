@@ -21,22 +21,22 @@ resource "azurerm_virtual_machine" "test" {
    }
 
   storage_os_disk {
-    name              = "osdisk"
+    name              = "${var.os_disk_name}"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
 
   os_profile {
-    computer_name  = "task1vm"
-    admin_username = "rlukin"
+    computer_name  = "${var.computer_name}"
+    admin_username = "${var.admin_username}"
     custom_data = "${var.custom_data}"
   }
 
   os_profile_linux_config {
     disable_password_authentication = true
     ssh_keys {
-    path     = "/home/rlukin/.ssh/authorized_keys"
+    path     = "/home/${var.admin_username}/.ssh/authorized_keys"
     key_data = "${var.sshkey}"
     }
   }
